@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'providers/app_state.dart';
 import 'screens/login_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => AppState(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -10,10 +17,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Quản Lý Sinh Viên',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      title: 'Student Manager',
+
+      themeMode: appState.isDark ? ThemeMode.dark : ThemeMode.light,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.grey[50],
+        useMaterial3: false,
+      ),
+      darkTheme: ThemeData.dark(),
+
       home: const LoginScreen(),
     );
   }

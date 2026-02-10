@@ -1,0 +1,83 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/app_state.dart';
+
+class AppLocalizations {
+  static final Map<String, Map<String, String>> _localizedValues = {
+    'vi': {
+      'title': 'Quản Lý Sinh Viên',
+      'login': 'Đăng Nhập',
+      'register': 'Đăng Ký',
+      'email': 'Email',
+      'password': 'Mật khẩu',
+      'confirm_password': 'Xác nhận mật khẩu',
+      'login_btn': 'Đăng Nhập',
+      'register_btn': 'Đăng Ký',
+      'no_account': 'Chưa có tài khoản? Đăng ký ngay',
+      'forgot_pass': 'Quên mật khẩu?',
+      'search': 'Tìm kiếm sinh viên',
+      'students': 'Sinh viên',
+      'schedule': 'Lịch học',
+      'exams': 'Lịch thi',
+      'group': 'Thông tin nhóm',
+      'settings': 'Cài đặt',
+      'dark_mode': 'Chế độ màn hình',
+      'language': 'Ngôn ngữ',
+      'logout': 'Đăng xuất',
+      'edit': 'Chỉnh sửa',
+      'delete': 'Xóa',
+      'save': 'Lưu',
+      'cancel': 'Hủy',
+      'add_student': 'Thêm Sinh Viên',
+      'edit_student': 'Chỉnh Sửa Sinh Viên',
+      'name': 'Họ và Tên',
+      'mssv': 'MSSV',
+      'major': 'Ngành Học',
+      'dept': 'Khoa',
+      'cohort': 'Khóa',
+      'dob': 'Ngày Sinh',
+      'phone': 'SĐT',
+      'school_year': 'Niên Khóa',
+    },
+    'en': {
+      'title': 'Student Management',
+      'login': 'Login',
+      'register': 'Register',
+      'email': 'Email',
+      'password': 'Password',
+      'confirm_password': 'Confirm Password',
+      'login_btn': 'Login',
+      'register_btn': 'Register',
+      'no_account': 'No account? Register now',
+      'forgot_pass': 'Forgot password?',
+      'search': 'Search students',
+      'students': 'Students',
+      'schedule': 'Schedule',
+      'exams': 'Exams',
+      'group': 'Group Info',
+      'settings': 'Settings',
+      'dark_mode': 'Dark Mode',
+      'language': 'Language',
+      'logout': 'Logout',
+      'edit': 'Edit',
+      'delete': 'Delete',
+      'save': 'Save',
+      'cancel': 'Cancel',
+      'add_student': 'Add Student',
+      'edit_student': 'Edit Student',
+      'name': 'Full Name',
+      'mssv': 'Student ID',
+      'major': 'Major',
+      'dept': 'Department',
+      'cohort': 'Cohort',
+      'dob': 'Date of Birth',
+      'phone': 'Phone',
+      'school_year': 'School Year',
+    },
+  };
+
+  static String t(BuildContext context, String key) {
+    Locale locale = Provider.of<AppState>(context).locale;
+    return _localizedValues[locale.languageCode]?[key] ?? key;
+  }
+}
