@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../tabs/student_list_tab.dart';
+import '../tabs/settings_tab.dart';
+import '../tabs/other_tabs.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -11,9 +14,10 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    const Center(child: Text(" Sinh Viên", style: TextStyle(fontSize: 20))),
-    const Center(child: Text(" Lịch Học", style: TextStyle(fontSize: 20))),
-    const Center(child: Text(" Cài Đặt", style: TextStyle(fontSize: 20))),
+    const StudentListTab(),
+    const ScheduleTab(),
+    const GroupInfoTab(),
+    const SettingsTab(),
   ];
 
   @override
