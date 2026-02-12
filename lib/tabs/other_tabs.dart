@@ -233,40 +233,6 @@ class _ScheduleTabState extends State<ScheduleTab> {
   }
 }
 
-// --- 2. ExamScheduleTab (Giữ nguyên) ---
-class ExamScheduleTab extends StatelessWidget {
-  const ExamScheduleTab({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final items = [
-      {'sub': 'Lập Trình Mobile', 'type': 'Trắc nghiệm', 'date': '15/04/2026'},
-      {'sub': 'Cấu trúc dữ liệu', 'type': 'Thực hành', 'date': '25/04/2026'},
-    ];
-    return ListView.builder(
-      padding: const EdgeInsets.all(16),
-      itemCount: items.length,
-      itemBuilder: (ctx, i) => Card(
-        margin: const EdgeInsets.only(bottom: 12),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        child: ListTile(
-          leading: const Icon(
-            Icons.calendar_month,
-            color: Colors.redAccent,
-            size: 40,
-          ),
-          title: Text(
-            items[i]['sub']!,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          subtitle: Text("${items[i]['type']} - Ngày: ${items[i]['date']}"),
-        ),
-      ),
-    );
-  }
-}
-
-// --- 3. GroupInfoTab (Cập nhật dữ liệu của bạn) ---
 class GroupInfoTab extends StatelessWidget {
   const GroupInfoTab({super.key});
 
